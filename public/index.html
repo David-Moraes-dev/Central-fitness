@@ -162,21 +162,12 @@ footer h4{color:var(--fg);text-transform:uppercase;letter-spacing:.1em;font-size
   </div>
 </footer>
 
+<script src="catalogo.js"></script>
 <script>
-/* ============================================================
-   COMO EDITAR (sem reconstruir o site)
-   - A POSIÇÃO NO RANKING É A ORDEM DESTA LISTA: mova um bloco
-     para cima/baixo para reordenar. Apague um bloco para remover
-     ou copie um bloco para adicionar.
-   - Campos vazios ("") ficam como pendentes ou não aparecem.
-   - category: equipamentos-de-treino | roupas | calcados | suplementos
-   - image: nome de arquivo na mesma pasta ou URL da imagem do produto
-   - price / oldPrice: números (ex.: 199.9). O desconto só aparece
-     se os dois forem informados e oldPrice > price.
-   ============================================================ */
+/* A seleção abaixo é a reserva. O catálogo principal está em produtos.json. */
 const CONTACT = { email: "fitnessafiliados1@gmail.com", instagram: "" };
 
-const PRODUCTS = [
+let PRODUCTS = [
   { name: "Bicicleta Ergométrica Bike Spinning 6kg Sensação Inércia Fitness Preto E Vermelho Sevenfit Para Cardio", description: "Bicicleta ergométrica de spinning Sevenfit com roda de inércia de 6 kg, indicada para treinos cardiovasculares.", category: "equipamentos-de-treino", image: "https://http2.mlstatic.com/D_NQ_NP_745785-MLA114987927277_072026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1RpF8sE" },
   { name: "Kit 3 Bermudas Dry Fit De Alto Padrão Para Academia Preto Gg", description: "Kit com três bermudas dry fit masculinas para academia, na cor preta e tamanho GG.", category: "roupas", image: "https://http2.mlstatic.com/D_NQ_NP_717497-MLB116260415300_092026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1RV9Htw" },
   { name: "Tênis Feminino Esportivo Caminhada Academia Corrida Treino Preto 38,0 Br", description: "Tênis feminino preto para caminhada, academia, corrida e treino, tamanho 38.", category: "calcados", image: "https://http2.mlstatic.com/D_NQ_NP_937689-MLB119498803815_102026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1U8NSF4" },
@@ -246,6 +237,7 @@ if (CONTACT.instagram) c.push(`Instagram: ${esc(CONTACT.instagram)}`);
 if (c.length) document.getElementById("contact").innerHTML = c.join("<br>");
 document.getElementById("year").textContent = new Date().getFullYear();
 render();
+CentralCatalogo.load('central-fitness', Object.keys(CATEGORIES), products => { PRODUCTS = products; render(); });
 </script>
 </body>
 </html>
