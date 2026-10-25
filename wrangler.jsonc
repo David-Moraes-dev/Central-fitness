@@ -1,0 +1,11 @@
+{
+  "name": "central-fitness",
+  "compatibility_date": "2026-10-19",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./public"
+  },
+  "previews": {}
+}
