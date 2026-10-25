@@ -257,5 +257,11 @@
       "commission": null,
       "source": "site-existente"
     }
-  ]
+  ],
+  "_automationConnectionTest": {
+    "version": "0.4.0",
+    "createdAt": "2026-10-25T19:38:46.966Z",
+    "purpose": "Teste de escrita; produtos preservados",
+    "branch": "teste-automacao-84e20415-1ab8-49ec-9452-e8a1f4f1e0c9"
+  }
 }
