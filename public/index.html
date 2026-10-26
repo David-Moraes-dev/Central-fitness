@@ -42,7 +42,6 @@ h2{font-size:clamp(26px,4vw,38px);font-weight:900;text-transform:uppercase;margi
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
 .card{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
 .card:hover{transform:translateY(-4px);border-color:#666}
-.rank{position:absolute;top:12px;left:12px;z-index:2;min-width:42px;height:42px;padding:0 10px;border-radius:99px;background:#fff;color:#000;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px}
 .pic{aspect-ratio:1/1;background:#fff;display:flex;align-items:center;justify-content:center}
 .pic img{width:100%;height:100%;object-fit:contain}
 .pic.ph{background:#151515}
@@ -466,7 +465,7 @@ function card(p, i) {
     price = `<div class="price"><span class="now">${brl(p.price)}</span>${hasO ? `<span class="old">${brl(p.oldPrice)}</span>` : ""}${off > 0 ? `<span class="off">-${off}%</span>` : ""}</div>`;
   }
   return `<article class="card">
-    <div class="rank" aria-label="Posição ${pos}">${pos}</div>
+
     ${pic}
     <div class="body">
       ${p.category && CATEGORIES[p.category] ? `<div class="cat">${CATEGORIES[p.category]}</div>` : ""}
