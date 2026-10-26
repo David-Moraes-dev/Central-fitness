@@ -139,23 +139,6 @@
       "source": "site-existente"
     },
     {
-      "name": "Colágeno Dark Lab em cápsula Sem sabor de 120 un",
-      "description": "Colágeno Dark Lab em cápsulas, sem sabor, embalagem com 120 unidades.",
-      "category": "suplementos",
-      "image": "https://http2.mlstatic.com/D_NQ_NP_817579-MLA100070605017_122025-O.webp",
-      "price": null,
-      "oldPrice": null,
-      "link": "https://meli.la/22xjCap",
-      "id": "fitness-009",
-      "marketplaceItemId": null,
-      "availability": "unknown",
-      "checkedAt": null,
-      "rating": null,
-      "sellerReputation": null,
-      "commission": null,
-      "source": "site-existente"
-    },
-    {
       "name": "Legging Preta Com Bolsos Blackout Zero Transparência",
       "description": "Legging preta com bolsos, com tecido descrito no anúncio como blackout e zero transparência.",
       "category": "roupas",
@@ -256,6 +239,42 @@
       "sellerReputation": null,
       "commission": null,
       "source": "site-existente"
+    },
+    {
+      "id": "ml-mlb7742756052",
+      "name": "Kit Halteres 6 Em 1 Peso Musculação Até 40kg Ajustável Halter, Kettlebell, Anilha Cor Preto-Vermelho",
+      "description": "Kit Halteres 6 Em 1 Peso Musculação Até 40kg Ajustável Halter, Kettlebell, Anilha Cor Preto-Vermelho",
+      "category": "equipamentos-de-treino",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_679906-MLA114988818772_082026-F.webp",
+      "imageAlt": "Kit Halteres 6 Em 1 Peso Musculação Até 40kg Ajustável Halter, Kettlebell, Anilha Cor Preto-Vermelho",
+      "link": "https://meli.la/2uy6bkU",
+      "price": null,
+      "oldPrice": null,
+      "marketplaceItemId": "MLB7742756052",
+      "availability": "available",
+      "checkedAt": "2026-10-26T00:36:27.745Z",
+      "rating": null,
+      "sellerReputation": null,
+      "commission": null,
+      "source": "verificacao-pagina-e-link-gerado"
+    },
+    {
+      "id": "ml-mlb7852779580",
+      "name": "Kit Peso Academia 15kgs Halken Halteres Anilhas Musculação 6 em 1",
+      "description": "Kit Peso Academia 15kgs Halken Halteres Anilhas Musculação 6 em 1",
+      "category": "equipamentos-de-treino",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_960483-MLA116714843299_082026-F.webp",
+      "imageAlt": "Kit Peso Academia 15kgs Halken Halteres Anilhas Musculação 6 em 1",
+      "link": "https://meli.la/2mqVj3u",
+      "price": null,
+      "oldPrice": null,
+      "marketplaceItemId": "MLB7852779580",
+      "availability": "available",
+      "checkedAt": "2026-10-26T00:36:33.731Z",
+      "rating": null,
+      "sellerReputation": null,
+      "commission": null,
+      "source": "verificacao-pagina-e-link-gerado"
     }
   ]
 }

@@ -42,10 +42,6 @@ h2{font-size:clamp(26px,4vw,38px);font-weight:900;text-transform:uppercase;margi
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
 .card{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
 .card:hover{transform:translateY(-4px);border-color:#666}
-.card.top{border:2px solid var(--fg)}
-.rank{position:absolute;top:12px;left:12px;z-index:2;min-width:42px;height:42px;padding:0 10px;border-radius:99px;background:#000;color:#fff;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px}
-.card.top .rank{background:#fff;color:#000}
-.medal{position:absolute;top:12px;right:12px;z-index:2;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:#fff;color:#000;padding:5px 10px;border-radius:99px}
 .pic{aspect-ratio:1/1;background:#fff;display:flex;align-items:center;justify-content:center}
 .pic img{width:100%;height:100%;object-fit:contain}
 .pic.ph{background:#151515}
@@ -108,7 +104,7 @@ footer h4{color:var(--fg);text-transform:uppercase;letter-spacing:.1em;font-size
       <div id="grid" class="grid"></div>
       <p id="empty" class="empty" hidden>Nenhuma oferta nesta categoria no momento.</p>
 
-      <div class="disc"><strong>Transparência:</strong> este ranking reúne ofertas selecionadas e não é baseado em testes feitos pela Central Fitness. Os links são de afiliado e podem gerar comissão, sem custo extra para você.</div>
+      <div class="disc"><strong>Transparência:</strong> esta seleção reúne ofertas e não é baseado em testes feitos pela Central Fitness. Os links são de afiliado e podem gerar comissão, sem custo extra para você.</div>
     </div>
   </section>
 
@@ -168,21 +164,280 @@ footer h4{color:var(--fg);text-transform:uppercase;letter-spacing:.1em;font-size
 const CONTACT = { email: "fitnessafiliados1@gmail.com", instagram: "" };
 
 let PRODUCTS = [
-  { name: "Bicicleta Ergométrica Bike Spinning 6kg Sensação Inércia Fitness Preto E Vermelho Sevenfit Para Cardio", description: "Bicicleta ergométrica de spinning Sevenfit com roda de inércia de 6 kg, indicada para treinos cardiovasculares.", category: "equipamentos-de-treino", image: "https://http2.mlstatic.com/D_NQ_NP_745785-MLA114987927277_072026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1RpF8sE" },
-  { name: "Kit 3 Bermudas Dry Fit De Alto Padrão Para Academia Preto Gg", description: "Kit com três bermudas dry fit masculinas para academia, na cor preta e tamanho GG.", category: "roupas", image: "https://http2.mlstatic.com/D_NQ_NP_717497-MLB116260415300_092026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1RV9Htw" },
-  { name: "Tênis Feminino Esportivo Caminhada Academia Corrida Treino Preto 38,0 Br", description: "Tênis feminino preto para caminhada, academia, corrida e treino, tamanho 38.", category: "calcados", image: "https://http2.mlstatic.com/D_NQ_NP_937689-MLB119498803815_102026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1U8NSF4" },
-  { name: "Basic Whey 1kg Growth Supplements", description: "Suplemento Basic Whey da Growth Supplements, embalagem de 1 kg.", category: "suplementos", image: "https://http2.mlstatic.com/D_NQ_NP_899347-MLA115984378274_092026-O.webp", price: null, oldPrice: null, link: "https://meli.la/29qpyVM" },
-  { name: "Kit 5 Camisetas Básicas Masculina Dry Fit Lisa Tradicional Sortido Lisa G", description: "Kit com cinco camisetas básicas masculinas dry fit, modelo liso e tamanho G.", category: "roupas", image: "https://http2.mlstatic.com/D_NQ_NP_667671-MLB113518491353_062026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1BHRTGK" },
-  { name: "Kit 20 Itens Esportivos Para Treino Em Casa Academia Fitness Funcional Com Elásticos Extensor Puxadores Massageador Faixas Elásticas Mini Band P/ Exercícios Ginástica Fisioterapia Topsand Activewear", description: "Kit com 20 itens esportivos para treino em casa, incluindo elásticos, extensor, puxadores, massageador, faixas e mini bands.", category: "equipamentos-de-treino", image: "https://http2.mlstatic.com/D_NQ_NP_990345-MLA115532130447_082026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1vevNuF" },
-  { name: "Tênis Mizuno Wave Rider 26 Feminino Esportivo Leve Academia", description: "Tênis feminino Mizuno Wave Rider 26, descrito como leve e indicado para atividades esportivas e academia.", category: "calcados", image: "https://http2.mlstatic.com/D_NQ_NP_965929-MLB118867116047_102026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1pXj18p" },
-  { name: "Creatina FTW em pó Sem sabor x 300g", description: "Creatina FTW em pó, sem sabor, embalagem de 300 g.", category: "suplementos", image: "https://http2.mlstatic.com/D_NQ_NP_982197-MLA99599655222_122025-O.webp", price: null, oldPrice: null, link: "https://meli.la/1LbprcE" },
-  { name: "Colágeno Dark Lab em cápsula Sem sabor de 120 un", description: "Colágeno Dark Lab em cápsulas, sem sabor, embalagem com 120 unidades.", category: "suplementos", image: "https://http2.mlstatic.com/D_NQ_NP_817579-MLA100070605017_122025-O.webp", price: null, oldPrice: null, link: "https://meli.la/22xjCap" },
-  { name: "Legging Preta Com Bolsos Blackout Zero Transparência", description: "Legging preta com bolsos, com tecido descrito no anúncio como blackout e zero transparência.", category: "roupas", image: "https://http2.mlstatic.com/D_NQ_NP_814117-MLB86479276979_062025-O.webp", price: null, oldPrice: null, link: "https://meli.la/2A5pRLh" },
-  { name: "Suplemento Hardcore Prohibido PRÉ TREINO 180g Sabor Fruit Punch", description: "Suplemento pré-treino Hardcore Prohibido, embalagem de 180 g e sabor Fruit Punch.", category: "suplementos", image: "https://http2.mlstatic.com/D_NQ_NP_722559-MLA115975427979_082026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1KS8Tya" },
-  { name: "Tênis Flyer Runner Mesh Feminino Puma", description: "Tênis feminino Puma Flyer Runner Mesh.", category: "calcados", image: "https://http2.mlstatic.com/D_NQ_NP_745008-MLA107265285199_022026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1cAZtZM" },
-  { name: "Tênis Mizuno Academia Creation Caminhada Macio Treino Oferta", description: "Tênis Mizuno Creation para academia, caminhada e treino, descrito como macio.", category: "calcados", image: "https://http2.mlstatic.com/D_NQ_NP_890913-MLB112949592612_072026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1hoNCLA" },
-  { name: "Creatina 100g Creatina Monohidratada Max Titanium Sem Sabor Alta Pureza", description: "Creatina monohidratada Max Titanium, sem sabor, embalagem de 100 g.", category: "suplementos", image: "https://http2.mlstatic.com/D_NQ_NP_697835-MLA117269994412_102026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1VGryod" },
-  { name: "Halter 2 Kg Bola Emborrachado - Peso De Academia Musculação Preto", description: "Halter emborrachado preto de 2 kg, em formato de bola, para musculação.", category: "equipamentos-de-treino", image: "https://http2.mlstatic.com/D_NQ_NP_809222-MLB115691763045_082026-O.webp", price: null, oldPrice: null, link: "https://meli.la/1HUyghK" }
+  {
+    "name": "Bicicleta Ergométrica Bike Spinning 6kg Sensação Inércia Fitness Preto E Vermelho Sevenfit Para Cardio",
+    "description": "Bicicleta ergométrica de spinning Sevenfit com roda de inércia de 6 kg, indicada para treinos cardiovasculares.",
+    "category": "equipamentos-de-treino",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_745785-MLA114987927277_072026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1RpF8sE",
+    "id": "fitness-001",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Kit 3 Bermudas Dry Fit De Alto Padrão Para Academia Preto Gg",
+    "description": "Kit com três bermudas dry fit masculinas para academia, na cor preta e tamanho GG.",
+    "category": "roupas",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_717497-MLB116260415300_092026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1RV9Htw",
+    "id": "fitness-002",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Tênis Feminino Esportivo Caminhada Academia Corrida Treino Preto 38,0 Br",
+    "description": "Tênis feminino preto para caminhada, academia, corrida e treino, tamanho 38.",
+    "category": "calcados",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_937689-MLB119498803815_102026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1U8NSF4",
+    "id": "fitness-003",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Basic Whey 1kg Growth Supplements",
+    "description": "Suplemento Basic Whey da Growth Supplements, embalagem de 1 kg.",
+    "category": "suplementos",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_899347-MLA115984378274_092026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/29qpyVM",
+    "id": "fitness-004",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Kit 5 Camisetas Básicas Masculina Dry Fit Lisa Tradicional Sortido Lisa G",
+    "description": "Kit com cinco camisetas básicas masculinas dry fit, modelo liso e tamanho G.",
+    "category": "roupas",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_667671-MLB113518491353_062026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1BHRTGK",
+    "id": "fitness-005",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Kit 20 Itens Esportivos Para Treino Em Casa Academia Fitness Funcional Com Elásticos Extensor Puxadores Massageador Faixas Elásticas Mini Band P/ Exercícios Ginástica Fisioterapia Topsand Activewear",
+    "description": "Kit com 20 itens esportivos para treino em casa, incluindo elásticos, extensor, puxadores, massageador, faixas e mini bands.",
+    "category": "equipamentos-de-treino",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_990345-MLA115532130447_082026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1vevNuF",
+    "id": "fitness-006",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Tênis Mizuno Wave Rider 26 Feminino Esportivo Leve Academia",
+    "description": "Tênis feminino Mizuno Wave Rider 26, descrito como leve e indicado para atividades esportivas e academia.",
+    "category": "calcados",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_965929-MLB118867116047_102026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1pXj18p",
+    "id": "fitness-007",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Creatina FTW em pó Sem sabor x 300g",
+    "description": "Creatina FTW em pó, sem sabor, embalagem de 300 g.",
+    "category": "suplementos",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_982197-MLA99599655222_122025-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1LbprcE",
+    "id": "fitness-008",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Legging Preta Com Bolsos Blackout Zero Transparência",
+    "description": "Legging preta com bolsos, com tecido descrito no anúncio como blackout e zero transparência.",
+    "category": "roupas",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_814117-MLB86479276979_062025-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/2A5pRLh",
+    "id": "fitness-010",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Suplemento Hardcore Prohibido PRÉ TREINO 180g Sabor Fruit Punch",
+    "description": "Suplemento pré-treino Hardcore Prohibido, embalagem de 180 g e sabor Fruit Punch.",
+    "category": "suplementos",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_722559-MLA115975427979_082026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1KS8Tya",
+    "id": "fitness-011",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Tênis Flyer Runner Mesh Feminino Puma",
+    "description": "Tênis feminino Puma Flyer Runner Mesh.",
+    "category": "calcados",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_745008-MLA107265285199_022026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1cAZtZM",
+    "id": "fitness-012",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Tênis Mizuno Academia Creation Caminhada Macio Treino Oferta",
+    "description": "Tênis Mizuno Creation para academia, caminhada e treino, descrito como macio.",
+    "category": "calcados",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_890913-MLB112949592612_072026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1hoNCLA",
+    "id": "fitness-013",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Creatina 100g Creatina Monohidratada Max Titanium Sem Sabor Alta Pureza",
+    "description": "Creatina monohidratada Max Titanium, sem sabor, embalagem de 100 g.",
+    "category": "suplementos",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_697835-MLA117269994412_102026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1VGryod",
+    "id": "fitness-014",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "name": "Halter 2 Kg Bola Emborrachado - Peso De Academia Musculação Preto",
+    "description": "Halter emborrachado preto de 2 kg, em formato de bola, para musculação.",
+    "category": "equipamentos-de-treino",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_809222-MLB115691763045_082026-O.webp",
+    "price": null,
+    "oldPrice": null,
+    "link": "https://meli.la/1HUyghK",
+    "id": "fitness-015",
+    "marketplaceItemId": null,
+    "availability": "unknown",
+    "checkedAt": null,
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "site-existente"
+  },
+  {
+    "id": "ml-mlb7742756052",
+    "name": "Kit Halteres 6 Em 1 Peso Musculação Até 40kg Ajustável Halter, Kettlebell, Anilha Cor Preto-Vermelho",
+    "description": "Kit Halteres 6 Em 1 Peso Musculação Até 40kg Ajustável Halter, Kettlebell, Anilha Cor Preto-Vermelho",
+    "category": "equipamentos-de-treino",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_679906-MLA114988818772_082026-F.webp",
+    "imageAlt": "Kit Halteres 6 Em 1 Peso Musculação Até 40kg Ajustável Halter, Kettlebell, Anilha Cor Preto-Vermelho",
+    "link": "https://meli.la/2uy6bkU",
+    "price": null,
+    "oldPrice": null,
+    "marketplaceItemId": "MLB7742756052",
+    "availability": "available",
+    "checkedAt": "2026-10-26T00:36:27.745Z",
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "verificacao-pagina-e-link-gerado"
+  },
+  {
+    "id": "ml-mlb7852779580",
+    "name": "Kit Peso Academia 15kgs Halken Halteres Anilhas Musculação 6 em 1",
+    "description": "Kit Peso Academia 15kgs Halken Halteres Anilhas Musculação 6 em 1",
+    "category": "equipamentos-de-treino",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_960483-MLA116714843299_082026-F.webp",
+    "imageAlt": "Kit Peso Academia 15kgs Halken Halteres Anilhas Musculação 6 em 1",
+    "link": "https://meli.la/2mqVj3u",
+    "price": null,
+    "oldPrice": null,
+    "marketplaceItemId": "MLB7852779580",
+    "availability": "available",
+    "checkedAt": "2026-10-26T00:36:33.731Z",
+    "rating": null,
+    "sellerReputation": null,
+    "commission": null,
+    "source": "verificacao-pagina-e-link-gerado"
+  }
 ];
 
 const CATEGORIES = {
@@ -197,7 +452,7 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;"
 let current = "all";
 
 function card(p, i) {
-  const pos = i + 1, top = pos <= 3;
+  const pos = i + 1;
   const name = p.name ? esc(p.name) : `<span class="pend">Produto ${pos} (nome a preencher)</span>`;
   const desc = p.description ? esc(p.description) : `<span class="pend">Descrição a preencher.</span>`;
   const pic = p.image
@@ -209,9 +464,8 @@ function card(p, i) {
     const off = hasO && p.oldPrice > p.price ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
     price = `<div class="price"><span class="now">${brl(p.price)}</span>${hasO ? `<span class="old">${brl(p.oldPrice)}</span>` : ""}${off > 0 ? `<span class="off">-${off}%</span>` : ""}</div>`;
   }
-  const medal = pos === 1 ? "Destaque nº 1" : pos === 2 ? "Nº 2" : pos === 3 ? "Nº 3" : "";
-  return `<article class="card${top ? " top" : ""}">
-    <div class="rank" aria-label="Posição ${pos}">${pos}</div>${medal ? `<div class="medal">${medal}</div>` : ""}
+  return `<article class="card">
+
     ${pic}
     <div class="body">
       ${p.category && CATEGORIES[p.category] ? `<div class="cat">${CATEGORIES[p.category]}</div>` : ""}
@@ -221,6 +475,10 @@ function card(p, i) {
 }
 
 function render() {
+  const present = new Set(PRODUCTS.map(p => p.category));
+  if (current !== "all" && !present.has(current)) current = "all";
+  const availableCategories = Object.entries(CATEGORIES).filter(([k]) => present.has(k));
+  cats.innerHTML = `<button data-c="all">Todas</button>` + availableCategories.map(([k,v]) => `<button data-c="${esc(k)}">${esc(v)}</button>`).join("");
   const list = PRODUCTS.map((p, i) => ({ p, i })).filter(x => current === "all" || x.p.category === current);
   document.getElementById("grid").innerHTML = list.map(x => card(x.p, x.i)).join("");
   document.getElementById("empty").hidden = list.length > 0;
@@ -228,7 +486,7 @@ function render() {
 }
 
 const cats = document.getElementById("categorias");
-cats.innerHTML = `<button data-c="all">Todas</button>` + Object.entries(CATEGORIES).map(([k, v]) => `<button data-c="${k}">${v}</button>`).join("");
+// Os filtros são reconstruídos em render() com as categorias presentes.
 cats.addEventListener("click", e => { const b = e.target.closest("button"); if (b) { current = b.dataset.c; render(); } });
 
 const c = [];
